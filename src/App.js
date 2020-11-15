@@ -64,9 +64,12 @@ const App = () => {
   }
 
   const search = (property, value) => {
-    console.log(property, value)
     const filtered = data.filter(user => user[property].toLowerCase().includes(value.toLowerCase()))
     setFilteredData(filtered)
+  }
+
+  const clearAll = () => {
+    setFilteredData(data)
   }
 
   return (
@@ -78,7 +81,7 @@ const App = () => {
           show === 'read'?
             <div>
               <Create visibility={visibility} />
-              <Search search={search} />
+              <Search search={search} clearAll={clearAll} />
               <Read data={filteredData} edit={editUser} deleteItem={deleteItem} /> 
             </div>
             : show === 'edit'?

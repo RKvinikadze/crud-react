@@ -52,7 +52,7 @@ const UserForm = ({
                     {emailError === 'valid'?'':<Form.Label style={{color: 'red', fontSize: '14px'}}>{emailError}</Form.Label>}
                 </Form.Group>
                 
-                <Button variant="success" size="md" block type="submit" style={{marginTop: '20px'}}>update</Button>
+                <Button variant="success" size="md" block type="submit" style={{marginTop: '20px'}}>{type==='edit'?<span>update</span>:<span>create</span>}</Button>
             </Form>
             <Button variant="secondary" size="md" block style={{marginTop: '20px'}} onClick={() => visibility('read')} >cancel</Button>
         </div>
