@@ -2,6 +2,8 @@ const usernameValidation = (username) => {
 
     if(username.length === 0){
         return 'Username field is required'
+    }else if(!username.trim().length){
+        return 'Username field is required'
     }
 
     return 'valid'
